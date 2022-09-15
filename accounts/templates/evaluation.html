@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+
+{%load static %}
+
+{% block content %}
+    
+    <div dir="rtl">
+        {% include 'search.html' %}
+
+            <br><br>
+            <div class="form-group">
+                <form method="POST" enctype="multipart/form-data"> 
+                    {%csrf_token%}
+                    {{form.media}}                                              <!--add feathers for textbody-->
+                    {{form.as_p}}
+                    
+                    <button class="btn btn-primary" type="submit">تقييم</button>
+            </div>
+
+  {% endblock  %}

@@ -1,0 +1,44 @@
+{%extends 'base.html'%}
+{%block title%} Login .... {%endblock %}
+
+
+{%block content%}
+<br><br><br><br><br><br>
+{% if searched %}
+  
+      {% for i in data %}
+                      <a href="{% url 'doctor_profile' i.pk%}">{{"الدكتور : "}} {{i.name}}</a><br>
+                        {{"التخصص : "}} {{i.Specialization}}<br>
+                        {{"العنوان : "}} {{i.address}}<br>
+                        {{"رقم الهاتف : "}} {{i.phone}}<br>
+                        {{"سعر الكشف : "}}  {{i.price}}<br>
+                        {{'---------------------------------'}}<br>
+          
+      {% endfor %}
+
+{% elif Specialization %}
+
+      {% for i in data %}
+                        <a href="{% url 'doctor_profile' i.pk%}">{{"الدكتور : "}} {{i.name}}</a><br>
+                        {{"التخصص : "}} {{i.Specialization}}<br>
+                        {{"العنوان : "}} {{i.address}}<br>
+                        {{"رقم الهاتف : "}} {{i.phone}}<br>
+                        {{"سعر الكشف : "}}  {{i.price}}<br>
+                        {{'---------------------------------'}}<br>
+
+      {% endfor %}
+
+{% elif governorate %}
+
+      {% for i in data %}
+            <a href="{% url 'doctor_profile' i.pk%}">{{"الدكتور : "}} {{i.name}}</a><br>
+            {{"التخصص : "}} {{i.Specialization}}<br>
+            {{"العنوان : "}} {{i.address}}<br>
+            {{"رقم الهاتف : "}} {{i.phone}}<br>
+            {{"سعر الكشف : "}}  {{i.price}}<br>
+            {{'---------------------------------'}}<br>
+
+      {% endfor %}
+{% endif %}
+
+{%endblock%}

@@ -1,0 +1,21 @@
+{%extends 'base.html'%}
+
+{%block content%}
+
+<div dir="rtl">
+  <div class="container">
+      <div class="signup">
+        <div class="form-group">
+          <form method="POST">
+              {%csrf_token%}
+              {{form.as_p}}
+              <div class="buttons-w"><button type="submit" class="btn btn-success ml-5">comment</button>
+          </div>
+          </form>
+      </div>
+      </div>
+  </div>
+  </div>
+  
+
+{%endblock%}
